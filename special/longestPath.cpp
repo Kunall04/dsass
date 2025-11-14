@@ -30,12 +30,17 @@ int dirs[4][2]={{-1,0},{1,0},{0,-1},{0,1}};
 	int findLongestPathLen(vector<vector<int>> const &mat, pair<int,int> const &src, pair<int,int> const &dest)
 	{
 		int n=mat.size();
+        if (n == 0) return 0;
 		int m=mat[0].size();
 		
 		int i=src.first;
 		int j=src.second;
 		int x=dest.first;
 		int y=dest.second;
+
+        if (i<0 || i>=n || j<0 || j>=m) return 0;  //base-case forgor
+        if (x<0 || x>=n || y<0 || y>=m) return 0;
+        if (mat[i][j]==0 || mat[x][y]==0) return 0;    //tf
 		
 		vector<vector<int>> vis(n,vector<int>(m,0));
 		
@@ -47,21 +52,21 @@ int dirs[4][2]={{-1,0},{1,0},{0,-1},{0,1}};
 int main() {
     vector<vector<int>> mat =
     {
-        { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
-        { 1, 0, 1, 0, 1, 1, 1, 0, 1, 1 },
-        { 1, 1, 1, 0, 1, 1, 0, 1, 0, 1 },
-        { 0, 0, 0, 0, 1, 0, 0, 1, 0, 0 },
-        { 1, 0, 0, 0, 1, 1, 1, 1, 1, 1 },
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-        { 1, 0, 0, 0, 1, 0, 0, 1, 0, 1 },
-        { 1, 0, 1, 1, 1, 1, 0, 0, 1, 1 },
-        { 1, 1, 0, 0, 1, 0, 0, 0, 0, 1 },
-        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 0 }
+        {1, 1, 1, 1, 1, 0, 0, 1, 1, 1}, 
+        {0, 1, 1, 1, 1, 1, 0, 1, 0, 1}, 
+        {0, 0, 1, 0, 1, 1, 1, 0, 0, 1}, 
+        {1, 0, 1, 1, 1, 0, 1, 1, 0, 1}, 
+        {0, 0, 0, 1, 0, 0, 0, 1, 0, 1}, 
+        {1, 0, 1, 1, 1, 0, 0, 1, 1, 0}, 
+        {0, 0, 0, 0, 1, 0, 0, 1, 0, 1}, 
+        {0, 1, 1, 1, 1, 1, 1, 1, 0, 0}, 
+        {1, 1, 1, 1, 1, 0, 0, 1, 1, 1}, 
+        {0, 0, 1, 0, 0, 1, 1, 0, 0, 1}
     };
  
     // (0, 0) are the source cell, and (5, 7) are the destination cell coordinates
-    pair<int, int> src = make_pair(0,0);
-    pair<int, int> dest = make_pair(5,7);
+    pair<int, int> src = make_pair(9,8);
+    pair<int, int> dest = make_pair(0,0);
  
     cout << "The Maximum length path is " << findLongestPathLen(mat, src, dest)<<'\n';
  

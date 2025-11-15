@@ -15,7 +15,7 @@ public:
         memset(t,false,sizeof(t));
 
         for(int i=0;i<s.size();i++) {
-            for(int j=i;j<s.size();j++) {
+            for(int j=i;j<s.size();j++) { 
                 if(solve(i,j,s)) {
                     if(maxlen<j-i+1) {
                         maxlen=j-i+1;  

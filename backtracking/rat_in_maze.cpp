@@ -14,7 +14,7 @@ class Solution {
         return x>=0 && x<n && y>=0 && y<n && arr[x][y]==1;
     }
   
-    void solve(int x,int y,const int n,vector<string>&res,string& path,vector<vector<int>>&arr,const vector<Choice>& choices) {
+    void solve(int x,int y,const int n, vector<string>&res, string& path, vector<vector<int>>&arr, const vector<Choice>& choices) {
         if(isSolved(x,y,n)) {
             res.push_back(path);
             return;

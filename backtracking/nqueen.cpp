@@ -51,7 +51,7 @@ vector<vector<string>> nq(int n) {
 }
 
 int main() {
-    int n=4;
+    int n=6;
 
     vector<vector<string>> ans=nq(n);
 

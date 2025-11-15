@@ -12,7 +12,7 @@ int shortdistance(vector<vector<char>>& mat) {
 
     for(int i=0;i<n;i++) {
         for(int j=0;j<m;j++) {
-            if(mat[i][j]=='s'){
+            if(mat[i][j]=='s') {
                 q.push({{i,j},0});
                 vis[i][j]=true;
                 break;

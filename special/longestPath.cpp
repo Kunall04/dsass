@@ -30,7 +30,7 @@ int dirs[4][2]={{-1,0},{1,0},{0,-1},{0,1}};
 	int findLongestPathLen(vector<vector<int>> const &mat, pair<int,int> const &src, pair<int,int> const &dest)
 	{
 		int n=mat.size();
-        if (n == 0) return 0;
+        if (n==0) return 0;
 		int m=mat[0].size();
 		
 		int i=src.first;

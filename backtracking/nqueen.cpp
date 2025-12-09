@@ -30,7 +30,7 @@ void solve(int col, int n, vector<string>& board, vector<vector<string>>& ans) {
         return;
     }
 
-    for(int row=0;row<n;row++) 
+    for(int row=0;row<n;row++) {
         if(isSafe(row,col,n,board)) {
             board[row][col]='Q';
             solve(col+1,n,board,ans);
